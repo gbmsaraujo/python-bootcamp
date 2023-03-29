@@ -11,7 +11,6 @@ HARD_ATTEMPTS = 5
 def message_attempts(attempts):
     return f"You have {attempts} attempts remaining to guess the number"
 
-
 def compare(guess, random_number, turns):
 
     if guess == random_number:
@@ -23,15 +22,6 @@ def compare(guess, random_number, turns):
         print("Too slow.\nGuess again.")
         print(message_attempts(turns))
 
-
-def set_difficulty():
-    level = input("Choose a difficulty. Type 'easy' or 'hard': ")
-    if level == "easy":
-        return EASY_ATTEMPTS
-    else:
-        return HARD_ATTEMPTS
-
-
 def guess_game():
 
     print(logo)
@@ -39,7 +29,9 @@ def guess_game():
     print("I'm thinking of a number between 1 and 100.")
     random_number = random.randint(1, 100)
 
-    turns = set_difficulty()
+    level = input("Choose a difficulty. Type 'easy' or 'hard': ")
+    turns = 10 if level == 'easy' else 5
+
     guess = 0
 
     while guess != random_number:
