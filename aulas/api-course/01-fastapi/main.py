@@ -4,6 +4,8 @@ from pydantic import BaseModel
 from typing import Optional
 from random import randrange
 
+# Link Course:  https://www.youtube.com/watch?v=0sOvCWFmrtA
+
 app = FastAPI()
 
 
